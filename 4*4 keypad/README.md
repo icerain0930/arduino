@@ -1,1 +1,2 @@
-# 需先在include libraries加入keypad的函式庫
+# 需先include libraries 
+tools > Manage libraries > 搜尋keypad ? install
