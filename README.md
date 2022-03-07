@@ -1,5 +1,6 @@
 # arduino
-記錄自己亂玩的程式碼
+記錄自己亂玩的程式碼 \n
+巴哈可看到每天的紀錄
 
 ## 自學的網址
 [Ray的arduino教學](https://blog.jmaker.com.tw/tag/arduino_getting_started/) \
