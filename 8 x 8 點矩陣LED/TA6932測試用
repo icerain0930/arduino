@@ -1,0 +1,47 @@
+#include <TA6932.h>
+#define PIN_TA6932_STB   2
+#define PIN_TA6932_CLK   3
+#define PIN_TA6932_DIN  13
+
+TA6932 tm(PIN_TA6932_STB, PIN_TA6932_CLK, PIN_TA6932_DIN);
+
+uint8_t p, v;
+uint8_t value = 1;
+
+void setup() {
+    // put your setup code here, to run once:
+    tm.begin();
+    Serial.begin(115200);
+    Serial.println("Started");
+    //red
+    tm.displayCache[0] = 0xff;
+    tm.displayCache[1] = 0xff;
+    tm.displayCache[2] = 0xff;
+    tm.displayCache[3] = 0xff;
+    tm.displayCache[4] = 0xff;
+    tm.displayCache[5] = 0x00;
+    tm.displayCache[6] = 0x00;
+    tm.displayCache[7] = 0x00;
+    //green
+    tm.displayCache[8] = 0x00;
+    tm.displayCache[9] = 0x00;
+    tm.displayCache[10] = 0x00;
+    tm.displayCache[11] = 0xff;
+    tm.displayCache[12] = 0xff;
+    tm.displayCache[13] = 0xff;
+    tm.displayCache[14] = 0xff;
+    tm.displayCache[15] = 0xff;
+    tm.updateDisplay();
+    delay(1000);
+
+    for( uint8_t b=0; b<8; b++)
+    {
+        tm.setBrightness(b);
+        delay(1000);
+    }
+}
+
+void loop()
+{
+    // do nothing...
+}
